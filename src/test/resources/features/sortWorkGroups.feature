@@ -4,7 +4,7 @@ Feature: User should be able to sort groups
   Background:
     Given user is on the next base login page
 
-  @workGroups
+
   Scenario Outline: Verify that HR, Helpdesk and Marketing user should be able to sort groups
 
 		        #Scenario: HR user Marketing user and Helpdesk user, sort groups

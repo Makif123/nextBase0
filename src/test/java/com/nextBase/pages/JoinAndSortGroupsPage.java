@@ -6,25 +6,26 @@ import org.openqa.selenium.support.FindBy;
 
 public class JoinAndSortGroupsPage {
 
-    @FindBy(xpath = "//button/span[.='New']")
-    public WebElement newName;
+    //xpath-method
+    @FindBy(xpath = "//span[normalize-space(text()) = 'Workgroups']")
+    public WebElement workgroupsBtn;   //<-element
 
-    @FindBy(id = "pagetitle")
-    public WebElement WorkgroupsAndProjects;
+    //locate
+    @FindBy(xpath = "//span[@class='sonet-groups-group-title'][.//*[@id='bx-sonet-groups-favorites-6']]//a")
+    public WebElement newProductDevelopmentGroupBtn;
 
-    @FindBy(xpath = "//button[@workGroups='btn']")
-    public WebElement allGroups;
+    @FindBy(xpath = "//*[@id='bx-sonet-groups-request-6']")
+    public WebElement joinButton;
 
-    @FindBy(xpath = "//td[.='No matching records found']")
-    public WebElement errorMessage;
+    @FindBy(xpath = "//*[@id='bx-sonet-groups-request-sent-6']")
+    public WebElement requestMessageMSG;
 
-    public WebElement getNewWorkGroups(String allGroups){
-        return Driver.getDriver().findElement(By.xpath("//input[@name='workgroups']"));
-    }
- @FindBy(xpath = "//*[@id=\"bx-sonet-groups-request-8\"]")
-    public WebElement textBox;
+    @FindBy(xpath = "//button[contains(@class, 'ui-btn-md')]")
+    public WebElement revokeWorkgroupBtn;
 
 }
+
+
 
 
 
