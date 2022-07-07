@@ -8,6 +8,8 @@ import io.cucumber.java.en.When;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 
+import java.time.Duration;
+
 public class SearchRelatedItem_StepDefinitions {
 
     NextBasePage nextBasePage = new NextBasePage();
@@ -19,7 +21,7 @@ public class SearchRelatedItem_StepDefinitions {
     @When("user search for {string} and clicks enter")
     public void user_search_for_and_clicks_enter(String string) {
         nextBasePage.searchBtn.sendKeys(string + Keys.ENTER);
-        BrowserUtils.waitForVisibility(By.xpath("//*[@id=\"pagetitle\"]"),3);
+        BrowserUtils.waitForVisibility(By.xpath("//*[@id=\"pagetitle\"]"), Duration.ofSeconds(3));
         System.out.println(Driver.getDriver().getCurrentUrl());
     }
     @Then("verify that  {string} related  can be seen")

@@ -9,6 +9,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
@@ -189,7 +190,7 @@ for given duration
      * @param timeToWaitInSec
      * @return
      */
-    public static WebElement waitForVisibility(WebElement element, int timeToWaitInSec) {
+    public static WebElement waitForVisibility(WebElement element, Duration timeToWaitInSec) {
         WebDriverWait wait = new WebDriverWait(Driver.getDriver(), timeToWaitInSec);
         return wait.until(ExpectedConditions.visibilityOf(element));
     }
@@ -201,7 +202,7 @@ for given duration
      * @param timeout
      * @return
      */
-    public static WebElement waitForVisibility(By locator, int timeout) {
+    public static WebElement waitForVisibility(By locator, Duration timeout) {
         WebDriverWait wait = new WebDriverWait(Driver.getDriver(), timeout);
         return wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
     }
@@ -213,7 +214,7 @@ for given duration
      * @param timeout
      * @return
      */
-    public static WebElement waitForClickablility(WebElement element, int timeout) {
+    public static WebElement waitForClickablility(WebElement element, Duration timeout) {
         WebDriverWait wait = new WebDriverWait(Driver.getDriver(), timeout);
         return wait.until(ExpectedConditions.elementToBeClickable(element));
     }
@@ -225,7 +226,7 @@ for given duration
      * @param timeout
      * @return
      */
-    public static WebElement waitForClickablility(By locator, int timeout) {
+    public static WebElement waitForClickablility(By locator, Duration timeout) {
         WebDriverWait wait = new WebDriverWait(Driver.getDriver(), timeout);
         return wait.until(ExpectedConditions.elementToBeClickable(locator));
     }
@@ -235,7 +236,7 @@ for given duration
      *
      * @param timeOutInSeconds
      */
-    public static void waitForPageToLoad(long timeOutInSeconds) {
+    public static void waitForPageToLoad(Duration timeOutInSeconds) {
         ExpectedCondition<Boolean> expectation = new ExpectedCondition<Boolean>() {
             public Boolean apply(WebDriver driver) {
                 return ((JavascriptExecutor) driver).executeScript("return document.readyState").equals("complete");
@@ -471,7 +472,7 @@ for given duration
      * @param by
      * @param time
      */
-    public static void waitForPresenceOfElement(By by, long time) {
+    public static void waitForPresenceOfElement(By by, Duration time) {
         new WebDriverWait(Driver.getDriver(), time).until(ExpectedConditions.presenceOfElementLocated(by));
     }
 

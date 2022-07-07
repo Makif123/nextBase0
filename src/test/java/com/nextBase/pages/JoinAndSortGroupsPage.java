@@ -7,18 +7,18 @@ import org.openqa.selenium.support.FindBy;
 public class JoinAndSortGroupsPage {
 
     //xpath-method
-    @FindBy(xpath = "//span[normalize-space(text()) = 'Workgroups']")
-    public WebElement workgroupsBtn;   //<-element
+    @FindBy(xpath = "(//span[@class='menu-item-link-text'])[4]")
+    public static WebElement workgroupsBtn;   //<-element
 
     //locate
-    @FindBy(xpath = "//span[@class='sonet-groups-group-title'][.//*[@id='bx-sonet-groups-favorites-6']]//a")
+    @FindBy(xpath = "//span[@id='bx-sonet-groups-request-6']")
     public WebElement newProductDevelopmentGroupBtn;
 
-    @FindBy(xpath = "//*[@id='bx-sonet-groups-request-6']")
-    public WebElement joinButton;
+    @FindBy(id = "bx-sonet-groups-request-6")
+    public static WebElement joinButton;
 
-    @FindBy(xpath = "//*[@id='bx-sonet-groups-request-sent-6']")
-    public WebElement requestMessageMSG;
+    @FindBy(id = "bx-sonet-groups-request-sent-6")
+    public static WebElement requestMessageMSG;
 
     @FindBy(xpath = "//button[contains(@class, 'ui-btn-md')]")
     public WebElement revokeWorkgroupBtn;

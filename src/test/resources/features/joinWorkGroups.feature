@@ -2,12 +2,12 @@
 Feature: User should be able to join groups
 
   Background:
-    Given "HR" is on Home page
+    Given "Helpdesk" is on Home page
 
   @workGroups
   Scenario: Verify that HR, Helpdesk and Marketing user should be able to join groups
 
-    When User goes to the workgroups.
+    When User goes to the workgroups
     And user join workgroup
     Then Verify that "Request has been sent" message is seen
 

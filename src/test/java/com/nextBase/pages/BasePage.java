@@ -1,11 +1,14 @@
 package com.nextBase.pages;
 
+import com.nextBase.utilities.BrowserUtils;
 import com.nextBase.utilities.ConfigurationReader;
 import com.nextBase.utilities.Driver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+
+import java.time.Duration;
 
 public class BasePage {
 
@@ -24,6 +27,7 @@ public class BasePage {
         Driver.getDriver().findElement(By.name("USER_LOGIN")).sendKeys(username);
         Driver.getDriver().findElement(By.name("USER_PASSWORD")).sendKeys(password);
         Driver.getDriver().findElement(By.className("login-btn")).click();
+        BrowserUtils.waitForPageToLoad(Duration.ofSeconds(5));
     }
 
      public static void loginAsHelpdesk(){
@@ -36,6 +40,7 @@ public class BasePage {
          Driver.getDriver().findElement(By.name("USER_LOGIN")).sendKeys(username);
          Driver.getDriver().findElement(By.name("USER_PASSWORD")).sendKeys(password);
          Driver.getDriver().findElement(By.className("login-btn")).click();
+         BrowserUtils.waitForPageToLoad(Duration.ofSeconds(5));
      }
 
      public static void loginAsMarketing(){
@@ -48,6 +53,7 @@ public class BasePage {
          Driver.getDriver().findElement(By.name("USER_LOGIN")).sendKeys(username);
          Driver.getDriver().findElement(By.name("USER_PASSWORD")).sendKeys(password);
          Driver.getDriver().findElement(By.className("login-btn")).click();
+         BrowserUtils.waitForPageToLoad(Duration.ofSeconds(5));
 
      }
 }
