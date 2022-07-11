@@ -1,4 +1,4 @@
-@wip
+
 Feature:  User should be able to display Company Calendar
 
   User Story :
