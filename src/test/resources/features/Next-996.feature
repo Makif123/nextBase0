@@ -9,7 +9,7 @@ Feature:  User should be able to display My Calendar
 
   Background: for the scenarios in the feature file, user is expected to be on login page
     Given user is on the next base login page
-    Given "hr" is on homepage
+    And "hr" is on homepage
     And Click the Calendar
     And Click the Add event
     And Select the event date and fill out th event name
@@ -20,7 +20,7 @@ Feature:  User should be able to display My Calendar
 
 
 
-    Given "hr" is on homepage
+    Given go to home
     And Click the Calendar
     When Click the MyCalendar
     Then Verify that User can see the my calendar on the page.
